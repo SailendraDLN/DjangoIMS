@@ -3,6 +3,8 @@ from articles.models import Article
 from django.shortcuts import render
 from django.template.loader import render_to_string
 
+
+
 def home_view(request):
     article_obj = Article.objects.get(id=1)
     my_list = Article.objects.all()

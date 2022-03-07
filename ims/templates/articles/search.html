@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form>
+    <input type="text" name="q"  />
+    <input type="submit"  />
+</form>
+<p>this should show</p>
+    {% if object %}
+        <h2>{{ object.title }}</h2>
+        <h3>{{ object.content }}</h3>
+    {% endif %}
+{% endblock content %}
