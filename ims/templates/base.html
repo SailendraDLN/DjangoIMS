@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django</title>
+    <title>Django IMS</title>
 </head>
 <body>
-    <h2>Hello World</h2>
+    <div style="display: flex; justify-content: space-around;">
+        <p><a href="/">HOME</a></p>
+        <p><a href="/articles/">Search Articles</a></p>
+        <p><a href="/articles/create/">Create Article</a></p>
+    </div>
     {% block content %}
     {% endblock content %}
 </body>
