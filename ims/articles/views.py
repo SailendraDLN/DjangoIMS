@@ -12,7 +12,11 @@ def article_detail_view(request, id=None):
 def article_search_view(request):
     #print(dir(request))
     query_dict = request.GET #this is a dictionary
-    query = query_dict.get("q") #<input type="text" name="q"  />
+    #query = query_dict.get("q") #<input type="text" name="q"  />
+    try:
+        query = int(query_dict.get("q"))
+    except:
+        query = None
     article_obj = None #setting a default value of none to article
     if query is not None:
         article_obj = Article.objects.get(id=query)

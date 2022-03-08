@@ -5,9 +5,10 @@
     <input type="text" name="q"  />
     <input type="submit"  />
 </form>
-<p>this should show</p>
     {% if object %}
         <h2>{{ object.title }}</h2>
         <h3>{{ object.content }}</h3>
+    {% else %}
+        <h3>Welcome to search articles</h3>
     {% endif %}
-{% endblock content %}
+{% endblock content %} 
