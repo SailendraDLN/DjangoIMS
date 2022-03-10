@@ -15,4 +15,5 @@ def home_view(request):
         "content": article_obj.content
     }
     HTML_STRING = render_to_string("home_view.html", context=context)
+    #return render(request, "home_view.html", context)
     return HttpResponse(HTML_STRING)
