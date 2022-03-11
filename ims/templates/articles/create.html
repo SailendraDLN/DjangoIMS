@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 
+
 {% block content %}
+<style>
+    .errorlist {
+        color: rgb(61, 90, 90);
+        text-decoration: line-through;
+    }
+</style>
     <h3>Welcome to create article form</h3>
     {% if not created %}
-        <form action="/articles/create/" method="POST" style="margin: top 30px;">
+        <div style="margin: 20px;">
+            <form action="." method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Create</button>
+            </form>
+        </div>
+        <!-- <form action="/articles/create/" method="POST" style="margin: top 30px;">
             {% csrf_token %}
             <div style="margin-top: 20px;">
                 <input type="text" name="title" id="1" placeholder="Article Title">
@@ -12,7 +26,7 @@
                 <input type="text" name="content" id="2" placeholder="Article Content">
             </div>
             <button type="submit">Create Article</button>
-        </form>
+        </form> -->
     {% else %}
         <h3><a href="/articles/{{object.id}}/" style="text-decoration: none;">{{object.title}}</a></h3>
         <h3>Your article was created in db</h3>
