@@ -5,13 +5,14 @@
         <div>
             <form method="POST">
                 {% csrf_token %}
-                {% if error %}
-                    <p style="color: crimson;">invalid username or password</p>
-                {% endif %}
-                <input type="text" name="username" id="1" placeholder="username" style="margin-top: 2em;">
-                <input type="password" name="password" id="2" placeholder="password" style="margin-top: 2em;">
-                <button type="submit" style="border: 1em solid dodgerblue;">Login</button>
+                {{form.as_p}}
+                <button type="submit" style="border: 0.5em solid dodgerblue;">Login</button>
             </form>
+        </div>
+        <div style="margin: 2em;">
+            <span style="margin: 10px; padding: 10px; border: 3px solid dodgerblue;">
+            Don't have an account ? , please <a href="/accounts/register/">Register</a>
+            </span>
         </div>
     {% else %}
         <p>Youre logged in already, would you like to <a href="/accounts/logout/"><b>Logout</b></a></p>
