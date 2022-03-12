@@ -23,7 +23,8 @@ from articles.views import (
 )
 from accounts.views import (
     login_view,
-    logout_view
+    logout_view,
+    register_view
 )
 urlpatterns = [
     path('', home_view),
@@ -33,4 +34,5 @@ urlpatterns = [
     path('articles/<int:id>/', article_detail_view),
     path('accounts/login/', login_view),
     path('accounts/logout/', logout_view),
+    path('accounts/register/', register_view)
 ]
