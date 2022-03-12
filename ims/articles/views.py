@@ -31,10 +31,15 @@ def article_create_view(request):
     form = ArticleForm(request.POST or None)
     context = { "form" : form }
     if form.is_valid():
-        context['form'] = form
-        title = form.cleaned_data.get('title')
-        content = form.cleaned_data.get('content')
-        article_obj = Article.objects.create(title=title, content=content)
+        article_obj = form.save()
+        """
+        to re-render the form and save the posted data in db,
+        comment the context[object]and context[created] assignments 
+        and re initialize the form as so: context['form'] = ArticleForm()
+        """
+        # title = form.cleaned_data.get('title')
+        # content = form.cleaned_data.get('content')
+        # article_obj = Article.objects.create(title=title, content=content)
         context['object'] = article_obj
         context['created'] = True
     # if request.method == "POST":
