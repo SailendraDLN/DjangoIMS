@@ -1,2 +1,2 @@
-# DjangoIMS
-Inventory project in Django
+# djangoDigital
+trying digital ocean
