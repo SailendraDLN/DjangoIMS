@@ -1,0 +1,2 @@
+# djangoDigital
+trying digital ocean
